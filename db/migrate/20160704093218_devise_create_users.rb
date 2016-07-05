@@ -20,7 +20,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
       t.inet     :last_sign_in_ip
 
       # used for city location
-      t.string :city,                 null: false, default: ""
+      t.string :city, null: false
 
 
       t.timestamps null: false
