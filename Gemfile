@@ -58,3 +58,5 @@ gem 'devise'
 
 # Easier forms to work with
 gem 'simple_form'
+
+gem 'dotenv-rails', :groups => [:development, :test]

@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   # we have to tell devise now not to use its default controller, we want to use our own
   devise_for :users, controllers: {registrations: 'registrations'}
-
+  get 'fetch', to: 'restaurants#fetch'
   get 'dashboard', to: 'pages#dashboard'
   root 'pages#home'
 end
