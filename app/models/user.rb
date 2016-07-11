@@ -4,4 +4,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   validates_presence_of :city
+  geocoded_by :city
+  after_validation :geocode, :if => :city_changed?
 end

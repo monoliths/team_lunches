@@ -59,4 +59,9 @@ gem 'devise'
 # Easier forms to work with
 gem 'simple_form'
 
+# load our env variables before our app loads
 gem 'dotenv-rails', :groups => [:development, :test]
+
+
+# Used for determining lat and long from a user
+gem 'geocoder'
