@@ -1,2 +1,9 @@
-<h1>pages#dashboard</h1>
-<%= link_to 'Find me food!', fetch_path, class: "btn btn-lg btn-primary" %>
+<h1>Find Food at my city</h1>
+<%= link_to "Find food at #{current_user.city}!", fetch_path, class: "btn btn-lg btn-primary" %><br>
+<h1>or search in a different city!</h1><br>
+
+
+<%= form_tag fetch_custom_city_path, :method => 'get' do %>
+  <%= text_field_tag :custom_city, params[:custom_city] %>
+  <%= submit_tag "Search" %>
+<% end %>

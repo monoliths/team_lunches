@@ -26,6 +26,11 @@ class RestaurantsController < ApplicationController
     @eateries = @eateries[0..4]
   end
 
+  def fetch_custom_city
+    @custom_city = params[:custom_city]
+  end
+
+
 
   private
 
