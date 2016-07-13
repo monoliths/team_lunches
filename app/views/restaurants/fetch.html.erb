@@ -1,18 +1,1 @@
-<% @eateries.each do |food| %>
-<div class="row">
-  <div class="col-xs-6 col-md-4">
-    <%= image_tag(food.image_url.gsub(/ms.jpg/, 'l.jpg'), size:"300", crop: "fill", class:"img-circle", alt: "#{food.name} image.") %>
-  </div>
-  <div class="col-xs-12 col-md-8">
-    <h1><%= link_to food.name, food.url, target:"_blank" %></h1>
-    <%= image_tag(food.rating_img_url_large, alt: "rating") %> <%= food.review_count %> ratings.<br>
-    <p>
-      Phone: <%= food.display_phone ? food.display_phone : "N/A" %><br>
-      Address: <%= food.location.display_address.join(' ') %><br>
-      Categories: <%= food.categories.flatten.select.each_with_index{ |_, i| i.even? }.join(', ') %><br>
-
-    </p>
-  </div>
-</div>
-<br>
-<% end %>
+<%= render '/restaurants/fetch', eateries: @eateries %>

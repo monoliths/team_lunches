@@ -5,5 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   validates_presence_of :city
   geocoded_by :city
+  validates :email, length: {minimum: 6, maximum: 60}
+
   after_validation :geocode, :if => :city_changed?
 end
