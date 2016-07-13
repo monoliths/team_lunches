@@ -1,9 +1,10 @@
-<h1>Find Food at my city</h1>
-<%= link_to "Find food at #{current_user.city}!", fetch_path, class: "btn btn-lg btn-primary" %><br>
-<h1>or search in a different city!</h1><br>
-
-
-<%= form_tag fetch_custom_city_path, :method => 'get' do %>
-  <%= text_field_tag :custom_city, params[:custom_city] %>
-  <%= submit_tag "Search" %>
-<% end %>
+<div class="row">
+  <div class="col-md-6">
+    <h1>Find me Food at <%= current_user.city %>...</h1><br>
+    <%= link_to "Find food at #{current_user.city}!", fetch_path, class: "btn btn-lg btn-primary" %><br>
+  </div>
+  <div class="col-md-6">
+    <h1>or search in a different city!</h1>
+    <%= render '/restaurants/form_fetch_custom_city' %>
+  </div>
+</div>

@@ -1,0 +1,4 @@
+<%= form_tag fetch_custom_city_path, :method => 'get' do %>
+  <%= text_field_tag :custom_city, params[:custom_city], placeholder: "Los Angeles, CA", class:"form-control" %>
+  <%= submit_tag "Search", class:"btn btn-primary" %>
+<% end %>
