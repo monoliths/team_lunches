@@ -8,11 +8,19 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+<!-- this body tag looks wierd but its used to disable turbolinks on certain view -->
+<body
+    <% if content_for?(:body_attributes) %>
+      <%= yield(:body_attributes) %>
+    <% end %>>
+
     <div class="container">
       <%= render 'layouts/navbar' %>
       <%= render 'layouts/flash_message' %>
       <%= yield %>
     </div>
   </body>
+
+
+
 </html>

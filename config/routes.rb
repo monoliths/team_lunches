@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {registrations: 'registrations'}
   get 'fetch', to: 'restaurants#fetch'
   get 'dashboard', to: 'pages#dashboard'
-  get 'fetch_custom_city', to: 'restaurants#fetch_custom_city', views:{}
+  get 'fetch_custom_city', to: 'restaurants#fetch_custom_city'
   root 'pages#home'
 end
