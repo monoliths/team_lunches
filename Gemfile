@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
-
+# specify ruby version
+ruby "2.3.1"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0'
@@ -65,3 +66,6 @@ gem 'dotenv-rails', :groups => [:development, :test]
 
 # Used for determining lat and long from a user
 gem 'geocoder'
+
+# used for recaptcha
+gem "recaptcha", require: "recaptcha/rails"
