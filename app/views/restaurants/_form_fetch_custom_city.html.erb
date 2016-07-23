@@ -1,4 +1,7 @@
 <%= form_tag fetch_custom_city_path, :method => 'get' do %>
   <%= text_field_tag :custom_city, params[:custom_city], placeholder: "Los Angeles, CA", class:"form-control" %>
+  <% if !current_user and !cookies[:solved_captcha] %>
+    <%= recaptcha_tags %>
+  <% end %>
   <%= submit_tag "Search", class:"btn btn-primary" %>
 <% end %>

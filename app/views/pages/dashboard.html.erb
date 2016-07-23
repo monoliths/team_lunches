@@ -3,6 +3,7 @@
     <h1>Find me Food at <%= current_user.city %>...</h1><br>
     <%= link_to "Find food at #{current_user.city}!", fetch_path, class: "btn btn-lg btn-primary" %><br>
   </div>
+  <br>
   <div class="col-md-6">
     <h1>or search in a different city!</h1>
     <%= render '/restaurants/form_fetch_custom_city' %>

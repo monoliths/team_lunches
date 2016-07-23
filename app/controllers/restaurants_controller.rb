@@ -1,5 +1,5 @@
 class RestaurantsController < ApplicationController
-  before_action :logged_in?
+  before_action :logged_in?, only: [:fetch]
 
   def fetch
     # set up yelp API
@@ -14,6 +14,14 @@ class RestaurantsController < ApplicationController
     if params[:custom_city].blank? or params[:custom_city].length > 50
       flash[:error] = "Please provide a valid city to search"
       redirect_to root_path and return
+    end
+
+    if !current_user and !verify_recaptcha and !cookies[:solved_captcha]
+      redirect_to root_path and return
+    end
+    unless current_user
+      cookies[:solved_captcha] = "yes"
+      flash.delete(:recaptcha_error)
     end
 
     city = Geocoder.coordinates(params[:custom_city])
